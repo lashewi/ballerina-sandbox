@@ -1,0 +1,92 @@
+2022-09-25 03:58:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "E.EMPOYEE_ID" not found; SQL statement:
+SELECT DISTINCT e.name FROM Employee e LEFT JOIN Payment p ON e.empoyee_id = p.employee_id
+        AND p.amount >  ?  ORDER BY e.name ASC; [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:139)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:136)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:635)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:644)
+	at org.h2.command.query.Select.preparePlan(Select.java:1313)
+	at org.h2.command.query.Select.prepare(Select.java:1204)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:283)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:315)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at io.ballerina.stdlib.sql.nativeimpl.QueryProcessor.nativeQueryExecutable(QueryProcessor.java:120)
+	at io.ballerina.stdlib.sql.nativeimpl.QueryProcessor.lambda$nativeQuery$0(QueryProcessor.java:88)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-09-25 03:58:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "E.EMPOYEE_ID" not found; SQL statement:
+SELECT DISTINCT e.name FROM Employee e LEFT JOIN Payment p ON e.empoyee_id = p.employee_id
+        AND p.amount >  ?  ORDER BY e.name ASC; [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:139)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:136)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:635)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:644)
+	at org.h2.command.query.Select.preparePlan(Select.java:1313)
+	at org.h2.command.query.Select.prepare(Select.java:1204)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:283)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:315)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at io.ballerina.stdlib.sql.nativeimpl.QueryProcessor.nativeQueryExecutable(QueryProcessor.java:120)
+	at io.ballerina.stdlib.sql.nativeimpl.QueryProcessor.lambda$nativeQuery$0(QueryProcessor.java:88)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-09-25 04:14:03 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1370)
+	at org.h2.jdbc.JdbcConnection.getAutoCommit(JdbcConnection.java:418)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:398)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:355)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:727)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:713)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-09-25 04:19:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT DISTINCT E.NAME AS EMPLOYEE_NAME FROM EMPLOYEE E \000a        LEFT JOIN PAYMENT P ON E.EMPLOYEE_ID = P.EMPLOYEE_ID\000a        AND P.AMOUNT >  ?  ORDER BY E.NAME ASC WHERE[*] P.AMOUNT >  ? "; SQL statement:
+SELECT DISTINCT e.name as employee_name FROM Employee e 
+        LEFT JOIN Payment p ON e.employee_id = p.employee_id
+        AND p.amount >  ?  ORDER BY e.name ASC WHERE p.amount >  ?  [42000-206]
+2022-09-25 04:19:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT DISTINCT E.NAME AS EMPLOYEE_NAME FROM EMPLOYEE E \000a        LEFT JOIN PAYMENT P ON E.EMPLOYEE_ID = P.EMPLOYEE_ID\000a        AND P.AMOUNT >  ?  ORDER BY E.NAME ASC WHERE[*] P.AMOUNT >  ? "; SQL statement:
+SELECT DISTINCT e.name as employee_name FROM Employee e 
+        LEFT JOIN Payment p ON e.employee_id = p.employee_id
+        AND p.amount >  ?  ORDER BY e.name ASC WHERE p.amount >  ?  [42000-206]
