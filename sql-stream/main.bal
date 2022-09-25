@@ -4,6 +4,7 @@ function getHighPaymentEmployees(string dbFilePath, decimal amount) returns stri
     //Add your logic here
     string[] response = [];
 
+    //hanlde and log erros
     do {
 	    jdbc:Client jdbcClient = check new ("jdbc:h2:" + dbFilePath, "root", "root");
 

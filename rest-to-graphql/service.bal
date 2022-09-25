@@ -15,6 +15,7 @@ service /graphql on new graphql:Listener(9090) {
 }
 
 function getUserSleepData(string userId) returns json|error {
+    //TODO: handle errors
     string query = string`activities/summary/sleep/user/${userId}`;
     return httpClient->get(query);
 }

@@ -7,6 +7,18 @@ public function main() {
     io:println("Result:  " , output);
 }
 
+
+//refactored code
+function allocateCubiclesRefactored(int[] requests) returns int[] {
+    int[] temp = [];
+    foreach var request in requests {
+        if temp.indexOf(request) is () {
+            temp.push(request);
+        }
+    }
+    return temp.sort();
+}
+
 function allocateCubicles(int[] requests) returns int[] {
     
     int[] temp = [];
